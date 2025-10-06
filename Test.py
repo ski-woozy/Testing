@@ -123,6 +123,6 @@ elif x == 4:
         indNum = indNum + 1
     print("Word length is ", wordLen," characters")
     
-#Project Select Failure
+#Project Selection Failure
 else:
     print("hatdog")
