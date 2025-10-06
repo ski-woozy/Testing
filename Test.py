@@ -16,8 +16,12 @@ print('What project do you wanna test? ')
 x = input()
 x = int(x)
 
+#Project Select #1
 if x == 1:
+    
+    #Project Title
     print("Greet Project")
+    
     userName = str()
     userBday = str()
 
@@ -25,9 +29,13 @@ if x == 1:
     userBday = input('When were you borN? ')
     
     greet(userName, userBday)
-
+    
+#Project Select #2
 elif x == 2:
+    
+    #Project Title
     print("Number Guessing Project")
+    
     countCheck = int(50)
     print("Ill guess your number, try me: ")
     numberIn = input()
@@ -76,9 +84,13 @@ elif x == 2:
                 countCheck = countCheck + 1
                 
             print('Your number is ', countCheck) 
-            
+
+#Project Select #3 
 elif x == 3:
+    
+    #Project Title
     print("BIGGEST and LOWEST number project")
+    
     numSet = []
     giveRandomSet(numSet)
     print(numSet)
@@ -96,5 +108,21 @@ elif x == 3:
 
     print("the lowest number is ",lowestNumber)
     print("the biggest number is ",biggestNumber)
+    
+#Project Select #4    
+elif x == 4:
+    
+    #Project Title
+    print("String Character Counter and Index Coded Character Print")
+    
+    wordInput = input('Type a word: ')
+    wordLen = len(wordInput)  
+    indNum = 0  
+    for letter in wordInput:
+        print(indNum," - ",wordInput[indNum])
+        indNum = indNum + 1
+    print("Word length is ", wordLen," characters")
+    
+#Project Select Failure
 else:
     print("hatdog")
