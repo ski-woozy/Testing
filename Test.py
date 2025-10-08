@@ -51,14 +51,14 @@ elif x == 2:
         
     elif numberIn < countCheck:
         print('Lower than ', countCheck)
-        countCheck = countCheck - 25
-            
+        countCheck -= 25
+
         if numberIn > countCheck:
             print('Higher than ', countCheck)
             
             while numberIn != countCheck:
                 print("It's not ", countCheck)
-                countCheck = countCheck + 1
+                countCheck += 1
             print("Your number is ", countCheck)
                 
         elif numberIn < countCheck:
@@ -66,19 +66,19 @@ elif x == 2:
             
             while numberIn != countCheck:
                 print("It's not ", countCheck)
-                countCheck = countCheck - 1 
+                countCheck -= 1
             print("Your number is ", countCheck)
             
     elif numberIn > countCheck:
         print('Higher than', countCheck)
-        countCheck = countCheck + 25.
+        countCheck += 25
         
         if numberIn < countCheck:
             print('Lower than ', countCheck)
             
             while numberIn != countCheck:
                 print("It's not ", countCheck)
-                countCheck = countCheck - 1
+                countCheck -= 1
             print('Your number is ', countCheck)
         
         elif numberIn > countCheck:
@@ -86,7 +86,7 @@ elif x == 2:
             
             while numberIn != countCheck:
                 print("It's not ", countCheck)
-                countCheck = countCheck + 1
+                countCheck +=1
                 
             print('Your number is ', countCheck) 
 
@@ -138,7 +138,7 @@ elif x == 4:
     indNum = 0  
     for letter in wordInput:
         print(indNum," - ",wordInput[indNum])
-        indNum = indNum + 1
+        indNum += 1
     print("Word length is ", wordLen," characters")
     
 #Project Select #5
@@ -177,6 +177,36 @@ elif x == 5:
             longestWord = word
         print(word, " - ", len(word), " characters")
     print("The longest word is ", longestWord, " with ", len(longestWord), " characters")
+    
+#Project Select #6
+elif x == 6:
+    
+    # 1. Receive input sentence
+    # 2. Put into array (ignore special characters, numbers, and spaces)
+    # 3. Print words with number code
+    # 4. Offer choice to select a word of their choice using number code
+    
+    print('Project Title: Word Selection')
+    inputSentence = input('Type a sentence\n')
+    wordList = []
+    aWord = ''
+    
+    for letter in inputSentence:
+        if letter.isalpha():
+            aWord = aWord + letter
+        elif not letter.isalpha():
+            if aWord != '':
+                wordList.append(aWord)
+                aWord = ''
+                
+    if aWord != '':
+            wordList.append(aWord)
+            
+    for word in wordList:
+        print(wordList.index(word), " - ", word)
+    
+    wordSelect = int(input("Select a word by typing their number code:"))
+    print('You have selected the word', '"', wordList[wordSelect], '"')
     
 #Project Select Fail
 else:
