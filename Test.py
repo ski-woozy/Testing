@@ -34,62 +34,36 @@ if x == 1:
 elif x == 2:
     
     #Project Title
-    print("Project Title: Number Guessing Project")
+    print("Project Title: Number Guessing Game\n")
 
-    # 1. Input a number between 1 - 100
-    # 2. Check if it's lower or higher than 50
-    # 3. Check if it's higher or lower than 25/75
-    # 4. Increase or decrease count check while printing the iterations
+    # 1. rolls a random number from 1 to 3
+    # 2. Sets 3 lives
+    # 2. Checks whether guess matches random number
+    # 3. if it doesn't match, re-roll number to guess and deduct lives
+    # WIN CONDITION: match and random number matches before lives finish
+    # LOSE CONDITION: run out of lives before guessing
     
-    countCheck = int(50)
-    print("Ill guess your number, give me a number between 1 - 100: ")
-    numberIn = input()
-    numberIn = int(numberIn)
     
-    if numberIn == countCheck:
-        print("Your number is neither above or below 50, so it's ", countCheck)
+    keepTrying = True
+    
+    while keepTrying is True:
         
-    elif numberIn < countCheck:
-        print('Lower than ', countCheck)
-        countCheck -= 25
-
-        if numberIn > countCheck:
-            print('Higher than ', countCheck)
-            
-            while numberIn != countCheck:
-                print("It's not ", countCheck)
-                countCheck += 1
-            print("Your number is ", countCheck)
-                
-        elif numberIn < countCheck:
-            print('Lower than ', countCheck)
-            
-            while numberIn != countCheck:
-                print("It's not ", countCheck)
-                countCheck -= 1
-            print("Your number is ", countCheck)
-            
-    elif numberIn > countCheck:
-        print('Higher than', countCheck)
-        countCheck += 25
+        ranNum = random.randint(1,3)
+        messageBox = ["\nGame over :(\n", "Wrong again :) 1 life left.\n", "Oops, wrong guess. You got 2 lives left.\n",  "Congrats, you won and survived my torture! :)\n"]
+        heartLeft = 3
+        print("Game's easy, guess the correct number that ranges from 1 - 3.\nAn incorrect guess changes the number to guess, and you've only got 3 tries :)\n")
+    
+        while heartLeft > 0:
+            userGuess = input("Type your guess here: ")
+            userGuess = int(userGuess)
+            if userGuess == ranNum:
+                print(messageBox[3])
+                heartLeft = 0
+            elif userGuess != ranNum:
+                heartLeft = heartLeft - 1
+                print(messageBox[heartLeft])
+                ranNum = random.randint(1,3)
         
-        if numberIn < countCheck:
-            print('Lower than ', countCheck)
-            
-            while numberIn != countCheck:
-                print("It's not ", countCheck)
-                countCheck -= 1
-            print('Your number is ', countCheck)
-        
-        elif numberIn > countCheck:
-            print('Higher than ', countCheck)
-            
-            while numberIn != countCheck:
-                print("It's not ", countCheck)
-                countCheck +=1
-                
-            print('Your number is ', countCheck) 
-
 #Project Select #3 
 elif x == 3:
     
