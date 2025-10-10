@@ -1,16 +1,6 @@
 # Imports
 import random
 
-# Functions
-def greet(usrName, birthDate):
-    return print("Your name is " + usrName + ' and you were born on ' + birthDate + '. ' + 'Nice to meet you!')
-
-def giveRandomSet(fiveSetRand):
-    p = int(0)
-    while p < 5:
-        fiveSetRand.append(random.randint(1,100))
-        p = p + 1
-
 # Project Selection
 print('What project do you wanna test? ')
 x = int(input("\n"))
@@ -21,6 +11,11 @@ if x == 1:
     #Project Title
     print("\nProject Title: Greet Project")
     
+    # Functions for the Project
+    def greet(usrName, birthDate):
+        return print("Your name is " + usrName + ' and you were born on ' + birthDate + '. ' + 'Nice to meet you!')
+
+    #User-Program Interaction
     userName = str()
     userBday = str()
 
@@ -81,6 +76,13 @@ elif x == 3:
     #Project Title
     print("\nProject Title: HIGHEST and LOWEST number project")
     
+    #Functions of the project
+    def giveRandomSet(fiveSetRand):
+        p = int(0)
+        while p < 5:
+            fiveSetRand.append(random.randint(1,100))
+        p = p + 1
+        
     numSet = []
     giveRandomSet(numSet)
     print(numSet)
@@ -186,6 +188,24 @@ elif x == 6:
     
     wordSelect = int(input("\nSelect a word by typing their number code: "))
     print('\nYou have selected the word', '"', wordList[wordSelect], '"')
+    
+elif x == 7:
+    
+    #Project Title
+    print("\nProject Title: Word Flipper")
+    
+    #Function for the project
+    def backward_string(val):
+        newVal = ''
+        counterVal = int((len(val) - 1))
+        while counterVal > -1:
+            newVal += val[counterVal]
+            counterVal -= 1
+        return newVal.strip()
+    
+    #User-Program Interaction Segment
+    userIn = input("\nInput the word you want to FLIP: ")
+    print(">", backward_string(userIn))
     
 #Project Select Fail
 else:
