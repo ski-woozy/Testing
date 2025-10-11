@@ -3,7 +3,7 @@ import random
 
 # Project Selection
 print('What project do you wanna test? ')
-x = int(input("\n"))
+x = int(input("\n>"))
 
 #Project Select #1
 if x == 1:
@@ -13,7 +13,7 @@ if x == 1:
     
     # Functions for the Project
     def greet(usrName, birthDate):
-        return print("Your name is " + usrName + ' and you were born on ' + birthDate + '. ' + 'Nice to meet you!')
+        return print("\nYour name is " + usrName + ' and you were born on ' + birthDate + '. ' + 'Nice to meet you!\n')
 
     #User-Program Interaction
     userName = str()
@@ -60,7 +60,7 @@ elif x == 2:
         endTry = input("Do you want to keep trying? Y/N\n")
         
         if endTry == 'n' or 'N':
-            print('\nSee you next time! :)')
+            print('\nSee you next time! :)\n')
             keepTrying = False
         
 #Project Select #3 
@@ -99,7 +99,7 @@ elif x == 3:
             lowestNumber = number
 
     print("\nthe lowest number is ",lowestNumber)
-    print("\nthe highest number is ",highestNumber)
+    print("\nthe highest number is ",highestNumber,'\n')
     
 #Project Select #4    
 elif x == 4:
@@ -120,7 +120,7 @@ elif x == 4:
     for letter in wordInput:
         print(indNum," - ",wordInput[indNum])
         indNum += 1
-    print("\nWord length is ", wordLen," characters")
+    print("\nWord length is ", wordLen," characters\n")
     
 #Project Select #5
 elif x == 5:
@@ -132,7 +132,7 @@ elif x == 5:
     # 5. Print longest word
     
     #Project Title
-    print("\nProject Title: Finding the longest word in the sentence")
+    print("\nProject Title: Finding the longest word in the sentence\n")
     
     #Input Sentence and Variables Declaration
     inputSentence = input("Type a sentence\n")
@@ -157,7 +157,7 @@ elif x == 5:
         if len(word) > len(longestWord):
             longestWord = word
         print('\n', word, " - ", len(word), " characters")
-    print("\nThe longest word is ", longestWord, " with ", len(longestWord), " characters")
+    print("\nThe longest word is ", longestWord, " with ", len(longestWord), " characters\n")
     
 #Project Select #6
 elif x == 6:
@@ -187,7 +187,7 @@ elif x == 6:
         print('\n', wordList.index(word), " - ", word)
     
     wordSelect = int(input("\nSelect a word by typing their number code: "))
-    print('\nYou have selected the word', '"', wordList[wordSelect], '"')
+    print('\nYou have selected the word', '"', wordList[wordSelect], '"\n')
     
 elif x == 7:
     
@@ -205,8 +205,55 @@ elif x == 7:
     
     #User-Program Interaction Segment
     userIn = input("\nInput the word you want to FLIP: ")
-    print(">", backward_string(userIn))
+    print(">", backward_string(userIn),'\n')
+    
+elif x == 8:
+    
+    #Project Title
+    print("\nProject Title: Most Frequent Word")
+    
+    #Function of the project
+    def most_frequent(strData):
+        strData = str(strData)
+        arrData = strData.split()
+        
+        for word in arrData:
+            wordClean = ''
+            for char in word:
+                if char.isalpha():
+                    wordClean += char
+            inRep = int(arrData.index(word))
+            arrData.pop(inRep)
+            arrData.insert(inRep, wordClean)
+            
+        arrDataComp = []
+        highCount = 0
+        highWord = ''
+            
+        for word in arrData:
+            wordCount = 0
+            wordHold = ''
+            noCopy = True
+            for comp in arrDataComp:
+                if word == comp:
+                    noCopy = False
+                    break
+            if noCopy is True:
+                wordHold = word
+                for word in arrData:
+                    if wordHold == word:
+                        wordCount += 1
+                    arrDataComp.append(wordHold)
+                    if highCount < wordCount:
+                        highCount = wordCount
+                        highWord = wordHold
+                        
+        return print("The word ", '"',highWord,'"'," appeared ", highCount, " times.\n")
+    
+    #User-Program Interaction
+    userIn = input("\nInput the sentence you want to test.\n\n>")
+    most_frequent(userIn)
     
 #Project Select Fail
 else:
-    print("Project not found, please try again.")
+    print("Project not found, please try again.\n")
