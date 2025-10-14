@@ -1,5 +1,5 @@
 #Project Title
-    print("\nProject Title: Basic Greet Project")
+    print("\nProject Title: Basic Greet")
     
     # Functions for the Project
     def greet(usrName, birthDate):
