@@ -189,6 +189,7 @@ elif x == 6:
     wordSelect = int(input("\nSelect a word by typing their number code: "))
     print('\nYou have selected the word', '"', wordList[wordSelect], '"\n')
     
+#Project Selection #7
 elif x == 7:
     
     #Project Title
@@ -207,6 +208,7 @@ elif x == 7:
     userIn = input("\nInput the word you want to FLIP: ")
     print(">", backward_string(userIn),'\n')
     
+#Project Selection #8
 elif x == 8:
     
     #Project Title
@@ -253,6 +255,42 @@ elif x == 8:
     #User-Program Interaction
     userIn = input("\nInput the sentence you want to test.\n\n>")
     most_frequent(userIn)
+    
+#Project Selection #9
+elif x == 9:
+    
+    #Project Title
+    print("\nProject Title: Sum Numbers In String")
+    
+    #Function of the project
+    def sum_numbers(text: str) -> int:
+    
+        numArr = []
+        textArr = text.split()
+        
+        for word in textArr:
+            letP = False
+            numP = False
+            for letter in word:
+                if letter.isalpha():
+                    letP = True
+                if letter.isnumeric():
+                    numP = True
+                    
+            if numP & letP is True:
+                continue
+            elif numP is True and letP is False:
+                numArr.append(word)
+                
+        sumOfNum = int(0)
+        
+        for num in numArr:
+            sumOfNum += int(num)
+                
+        return print("\n",sumOfNum)
+
+    userIn = input("\nTo test the program, input any string with numbers\n\n>")
+    sum_numbers(userIn)
     
 #Project Select Fail
 else:
