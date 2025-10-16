@@ -1,0 +1,11 @@
+From: Bryan
+Subject: Hotdog sandwiches
+Content: I'd like to order 3 hotdog sandwiches
+
+From: Hector
+Subject: Hi, long time no contact
+Content: I haven't talked to you in a long time, maybe we can catch up
+
+From: Rose
+Subject: potatoes
+Content: Ah yes, i like potatoes
