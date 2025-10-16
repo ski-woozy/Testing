@@ -19,7 +19,7 @@ for letter in inputSentence:
             aWord = ''
             
 if aWord != '':
-        wordList.append(aWord)
+    wordList.append(aWord)
         
 for word in wordList:
     print('\n', wordList.index(word), " - ", word)
