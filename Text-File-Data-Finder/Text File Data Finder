@@ -1,0 +1,33 @@
+#Project Title
+print("\nProject Title: Text File Data Finder")
+
+#User-Program Interaction
+fName = input('\nType the file name or its directory to access the file you wish to open\n> ')
+
+try:
+    fHand = open(fName)
+except:
+    print('Unable to access the file ', fName)
+    quit()
+    
+actions = input('Input the data content you want to display (Sender, Subject, Content)\n> ')
+actions = actions.lower()
+actionArr = actions.split()
+actionArrClean = []
+
+for word in actionArr:
+    cleanWord = str('')
+    for letter in word:
+        if letter.isalpha():
+            cleanWord += letter
+    actionArrClean.append(cleanWord)
+    
+for line in fHand:
+    line = line.rstrip()
+    for action in actionArrClean:
+        if action == 'sender' and line.startswith('From:'):
+            print(line)
+        elif action == 'subject' and line.startswith('Subject:'):
+            print(line)
+        elif action == 'content' and line.startswith('Content:'):
+            print(line)
