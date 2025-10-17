@@ -1,16 +1,31 @@
 #Project Title
 print("\nProject Title: Text File Data Finder")
 
+def lineCounter (fileHandle):
+    fileHandle.seek(0)
+    lineCount = 0
+    for _ in fileHandle:
+        lineCount += 1
+    return lineCount
+
+def charCounter(fileHandle):
+    fileHandle.seek(0)
+    chars = fileHandle.read()
+    _ = len(chars)
+    return _
+
 #User-Program Interaction
-fName = input('\nType the file name or its directory to access the file you wish to open\n> ')
+fName = input('\nType the file name or its directory to access the file\n> ')
 
 try:
     fHand = open(fName)
 except:
-    print('Unable to access the file ', fName)
+    print('\nUnable to access the file ', fName)
     quit()
+
+print('\nFile Information\n----------------', '\nLine Count: ', lineCounter(fHand), '\nCharacter Count: ', charCounter(fHand))
     
-actions = input('Input the data content you want to display (Sender, Subject, Content)\n> ')
+actions = input('\nInput the data content you want to display (Sender, Subject, Content)\n> ')
 actions = actions.lower()
 actionArr = actions.split()
 actionArrClean = []
