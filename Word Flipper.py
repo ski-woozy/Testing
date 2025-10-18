@@ -3,12 +3,7 @@ print("\nProject Title: Word Flipper")
 
 #Function for the project
 def backward_string(val):
-    newVal = ''
-    counterVal = int((len(val) - 1))
-    while counterVal > -1:
-        newVal += val[counterVal]
-        counterVal -= 1
-    return newVal.strip()
+    return val[::-1]
 
 #User-Program Interaction Segment
 userIn = input("\nInput the word you want to FLIP: ")
