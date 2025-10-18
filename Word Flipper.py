@@ -2,9 +2,9 @@
 print("\nProject Title: Word Flipper")
 
 #Function for the project
-def backward_string(val):
+def revWord(val):
     return val[::-1]
 
-#User-Program Interaction Segment
+#User-Program Interaction
 userIn = input("\nInput the word you want to FLIP: ")
-print(">", backward_string(userIn),'\n')
+print(">", revWord(userIn),'\n')

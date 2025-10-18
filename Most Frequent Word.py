@@ -1,7 +1,7 @@
 #Project Title
 print("\nProject Title: Most Frequent Word")
 
-#Function of the project
+#Function to find the most frequent word in a string
 def most_frequent(strData):
     strData = str(strData)
     arrData = strData.split()

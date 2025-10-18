@@ -10,9 +10,10 @@ print("\nProject Title: Number Guessing Game")
 # WIN CONDITION: match and random number matches before lives finish
 # LOSE CONDITION: run out of lives before guessing
 
-
+#Keep playing loop
 keepTrying = True
 
+#Main Game Loop
 while keepTrying is True:
     
     ranNum = random.randint(1,3)

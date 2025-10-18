@@ -6,10 +6,12 @@ print('\nProject Title: Word Selection')
 # 3. Print words with number code
 # 4. Offer choice to select a word of their choice using number code
 
+#User-Program Interaction
 inputSentence = input('\nType a sentence: ')
 wordList = []
 aWord = ''
 
+#Cleans inputSentence of non-alpha characters and places words into wordList
 for letter in inputSentence:
     if letter.isalpha():
         aWord = aWord + letter
@@ -17,10 +19,12 @@ for letter in inputSentence:
         if aWord != '':
             wordList.append(aWord)
             aWord = ''
-            
+
+#To catch last word if no special character at end            
 if aWord != '':
     wordList.append(aWord)
         
+#Prints words with number code and offers selection
 for word in wordList:
     print('\n', wordList.index(word), " - ", word)
 

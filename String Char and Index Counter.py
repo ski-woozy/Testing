@@ -7,6 +7,7 @@ print("\nProject Title: String Char and Index Counter")
 # 4. Print each letter accompanied by their index placement
 # 5. Print word length
 
+#User-Program Interaction
 wordInput = input('\nType a word: ')
 wordLen = len(wordInput)  
 indNum = 0  

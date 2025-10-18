@@ -18,10 +18,11 @@ print("\nProject Title: HIGHEST and LOWEST number")
 # 5. Variables will be updated if the array item is smaller or bigger than current values
 # 6. Print highest and lowest numbers.
 
-#User-Program Interaction
+#Initializations
 numSet = []
 giveRandomSet(numSet)
 print('\nThe random set of numbers is: ', numSet, '\n')
 
+#Display highest and lowest numbers
 print("The HIGHEST number is: ", max(numSet))
 print("The LOWEST number is: ", min(numSet), '\n')

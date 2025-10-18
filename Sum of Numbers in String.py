@@ -1,7 +1,7 @@
 #Project Title
 print("\nProject Title: Sum of Numbers In String")
 
-#Function of the project
+#Function to sum all numbers in a string
 def sum_numbers(text: str) -> int:
 
     numArr = []
@@ -28,5 +28,6 @@ def sum_numbers(text: str) -> int:
             
     return print("\n",sumOfNum)
 
+#User-Program Interaction
 userIn = input("\nTo test the program, input any string with numbers\n\n>")
 sum_numbers(userIn)
