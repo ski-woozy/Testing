@@ -37,7 +37,7 @@ def most_frequent(strData):
                     highCount = wordCount
                     highWord = wordHold
                     
-    return print("The word ", '"',highWord,'"'," appeared ", highCount, " times.\n")
+    return print("The word ", '"', highWord, '"', " appeared ", highCount, " times.\n")
 
 #User-Program Interaction
 userIn = input("\nInput the sentence you want to test.\n\n>")

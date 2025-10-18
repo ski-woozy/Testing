@@ -1,5 +1,13 @@
 import random
 
+#Functions of the project
+def giveRandomSet(fiveSetRand):
+    p = int(0)
+    while p < 5:
+        fiveSetRand.append(random.randint(1, 100))
+        p = p + 1
+    return fiveSetRand
+
 #Project Title
 print("\nProject Title: HIGHEST and LOWEST number")
 
@@ -10,27 +18,10 @@ print("\nProject Title: HIGHEST and LOWEST number")
 # 5. Variables will be updated if the array item is smaller or bigger than current values
 # 6. Print highest and lowest numbers.
 
-#Functions of the project
-def giveRandomSet(fiveSetRand):
-    p = int(0)
-    while p < 5:
-        fiveSetRand.append(random.randint(1,100))
-    p = p + 1
-    
+#User-Program Interaction
 numSet = []
 giveRandomSet(numSet)
-print(numSet)
+print('\nThe random set of numbers is: ', numSet, '\n')
 
-lowestNumber = None
-highestNumber = None
-
-for number in numSet:
-    if highestNumber is None or number > highestNumber:
-        highestNumber = number
-
-for number in numSet:
-    if lowestNumber is None or number < lowestNumber:
-        lowestNumber = number
-
-print("\nthe lowest number is ",lowestNumber)
-print("\nthe highest number is ",highestNumber,'\n')
+print("The HIGHEST number is: ", max(numSet))
+print("The LOWEST number is: ", min(numSet), '\n')
