@@ -1,10 +1,15 @@
 #Project Title
 print("\nProject Title: Most Frequent Word")
-print('\n1. Version 1.0')
-print('\n2. Version 2.0\n')
+print('\n1. Version 1.0 - Automatically removes non-alpha characters from words before processing.')
+print('\n2. Version 2.0 - Allows user to choose whether to keep or remove non-alpha characters, rids of special characters.')
+print('\n3. Version 3.0 - Chooses the top 10 most frequent words and their respective count from the input sentence.\n')
 
 #Selection of version to run
-version = input("Select the version to run (1 or 2): ")
+version = input("Select the version to run (1, 2, or 3): ")
+
+if version not in ['1', '2', '3']:
+        while version not in ['1', '2', '3']:
+            version = input("\nInvalid input. Please type '1', '2', or '3':\n\n>")
 
 if version == '1':
     print("\n\nYou have selected Version 1.0\n")
@@ -112,3 +117,41 @@ elif version == '2':
             action = input("Invalid input. Please type 'clean' or 'keep':\n\n>")
     elif action in ['clean', 'keep']:
         most_frequent(userIn, action)
+        
+elif version == '3':
+    print("\n\nYou have selected Version 3.0\n")
+    
+    #Function to print the top 10 most frequent word from a string, cleans non-alpha characters, and returns a tuple data of the results
+    def topTenFreq (text: str) -> str :
+        textArr = text.split()
+        
+        #Cleans non-alpha characters
+        for word in textArr:
+            wordCl = ''
+            for char in word:
+                if char.isalpha():
+                    wordCl += char
+            repIn = textArr.index(word)
+            textArr.pop(repIn)
+            textArr.insert(repIn, wordCl)
+            
+        #Creates count for each word   
+        words = dict()
+        for word in textArr:
+            words[word] = words.get(word, 0) + 1
+        
+        #Selects top 10 most frequent words
+        topTen = list()
+        topTen = sorted([(v, k) for k, v in words.items()], reverse=True)[:10]
+        
+        print(topTen)
+        #Prints the results
+        print("\nThe top 10 most frequent words are as follows (in the format of ('word', count)):\n")
+        for count, word in topTen:
+            print(f"{word} - {count}x")
+        
+        #returns a list data of top ten
+        return topTen
+
+    userIn = input('Input a sentence to test the program\n\n>')
+    topTenFreq(userIn)
