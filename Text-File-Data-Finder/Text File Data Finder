@@ -1,3 +1,5 @@
+import re
+
 #Project Title
 print("\nProject Title: Text File Data Finder")
 
@@ -40,9 +42,5 @@ for word in actionArr:
 for line in fHand:
     line = line.rstrip()
     for action in actionArrClean:
-        if action == 'sender' and line.startswith('From:'):
-            print(line)
-        elif action == 'subject' and line.startswith('Subject:'):
-            print(line)
-        elif action == 'content' and line.startswith('Content:'):
+        if action == 'sender' and re.search('^From:', line) or action == 'subject' and re.search('^Subject:', line) or action == 'content' and re.search('^Content:', line):
             print(line)
