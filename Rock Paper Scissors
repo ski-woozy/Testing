@@ -21,25 +21,28 @@ def get_computer_choice():
 
 while True:
     computerChoice = get_computer_choice()
-    userChoice = input("\nEnter your choice (R for Rock, P for Paper, S for Scissors): ").upper()
-    if userChoice not in ['R', 'P', 'S']:
-        while userChoice not in ['R', 'P', 'S']:
-            userChoice = input('Invalid input, try (R for Rock, P for Paper, S for Scissors): ').upper()
-    else:
-        choice_map = {
-            'R': "rock 🪨",
-            'P': "paper 📄",
-            'S': "scissors ✂"
-        }
+    
+    while True:
+        userChoice = input("\nEnter your choice (R for Rock, P for Paper, S for Scissors): ").upper()
+        if userChoice not in ['R', 'P', 'S']:
+            print('\nInvalid input!')
+        else:
+            break
+        
+    choice_map = {
+        'R': "rock 🪨",
+        'P': "paper 📄",
+        'S': "scissors ✂"
+    }
 
-        if choice_map[userChoice] == computerChoice:
-            print(f"\nBoth players selected {choice_map[userChoice]} , it's a tie!")
-        elif choice_map[userChoice] != computerChoice:
-            if choice_map[userChoice] == "rock 🪨" and computerChoice  == "scissors ✂" or choice_map[userChoice] == "paper 📄" and computerChoice  == "rock 🪨" or choice_map[userChoice] == "scissors ✂" and computerChoice  == "paper 📄":
-                print(f"\nPlayer chose {choice_map[userChoice]}  and Bot chose {computerChoice}. You won!")
-            else:
-                print(f"\nPlayer chose {choice_map[userChoice]}  and Bot chose {computerChoice}. You lost!")
-                
+    if choice_map[userChoice] == computerChoice:
+        print(f"\nBoth players selected {choice_map[userChoice]} , it's a tie!")
+    elif choice_map[userChoice] != computerChoice:
+        if choice_map[userChoice] == "rock 🪨" and computerChoice  == "scissors ✂" or choice_map[userChoice] == "paper 📄" and computerChoice  == "rock 🪨" or choice_map[userChoice] == "scissors ✂" and computerChoice  == "paper 📄":
+            print(f"\nPlayer chose {choice_map[userChoice]}  and Bot chose {computerChoice}. You won!")
+        else:
+            print(f"\nPlayer chose {choice_map[userChoice]}  and Bot chose {computerChoice}. You lost!")
+            
     tryAsk = input('\nTry again? (Y/N): ').upper()
     
     if tryAsk == 'N':
