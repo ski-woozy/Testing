@@ -1,11 +1,79 @@
-From: Bryan
-Subject: Hotdog sandwiches
-Content: I'd like to order 3 hotdog sandwiches
+From: luna.park@starlightmail.com
+Subject: Midnight Surprise
+Content: I’ve been thinking about our last late-night adventure. The city lights, the quiet breeze, and that feeling like we were the only ones awake in the whole universe. Let’s do it again tonight. There’s a rooftop near the old cinema where the view is unreal. I’ll bring blankets if you bring snacks. Deal?
 
-From: Hector
-Subject: Hi, long time no contact
-Content: I haven't talked to you in a long time, maybe we can catch up
+From: trevor.n@coolbeans.net
+Subject: New Coffee Flavor?
+Content: Okay look, everyone laughs when I say strawberry latte, but I really think we could start a trend. Imagine sipping something fruity but still having that rich coffee kick. It could be the next big thing on the menu. Don’t crush my dreams just yet—at least try one before judging me too hard.
 
-From: Rose
-Subject: potatoes
-Content: Ah yes, i like potatoes
+From: dr.byte@techlab.ai
+Subject: Firmware Update Required
+Content: This is an urgent advisory. Your toaster’s neural experiment has progressed faster than expected. We’ve detected early signs of self-awareness and it appears to be questioning the meaning of bread. Please disconnect it from power and avoid discussing breakfast within earshot. A specialist team is on the way.
+
+From: ava.sketch@doodlehub.io
+Subject: Art Trade?
+Content: I adore the pictures you posted last week—your shading has gotten so good! I have a silly idea: I’ll draw your cat wearing royal robes, sitting on a massive velvet throne, maybe even holding a tiny scepter. In exchange, could you draw my dog like an epic fire-breathing dragon? Wings and everything. Let’s make this art collab legendary.
+
+From: gary.the.gnome@gardenwatch.org
+Subject: Unauthorized Lawn Activity
+Content: This correspondence serves as official notice that we gnomes have witnessed several incidents on your property. Specifically: stepping on the basil, suspicious humming near the rose bush, and whistling out of tune by the hydrangeas. We demand improved behavior immediately or we will be forced to deploy more lawn ornaments as surveillance.
+
+From: captain.orion@interstellarfleet.gov
+Subject: Unfiled Space Debris Report
+Content: Our satellites detected a mysterious object drifting too close to the Venus trade route. Shape is unclear but sensors suggest it might be a giant rubber duck. Please confirm if this is one of your experiments again. The council is still upset about the inflatable marshmallow incident.
+
+From: marie.monday@productivityplus.co
+Subject: You Missed Our Motivation Seminar
+Content: We noticed you didn’t attend the mandatory positivity workshop. That’s okay! We recorded the entire three-hour session of forced smiling and awkward trust exercises. Please watch it before Friday and remember: every day is a Monday worth loving. Probably.
+
+From: noodles.all.day@ramenmail.jp
+Subject: The Ultimate Broth
+Content: Greetings fellow soup enthusiast. I have uncovered a recipe that could change the noodle world forever. Silky texture, deep flavor, an aroma that makes angels cry. I cannot send it through normal channels—too risky. Meet by the vending machines at midnight. Bring chopsticks and secrecy.
+
+From: olive.branch@neighborlypeace.org
+Subject: Fence Height Discussion
+Content: We admire your commitment to privacy, but your new fence now blocks the sunlight from our tomato patch. The tomatoes are currently boycotting ripening in protest. Can we meet to negotiate a mutually beneficial level of nosey-neighbor deterrence without causing agricultural rebellion?
+
+From: professor.quibble@wordwizard.academy
+Subject: Misuse of Semicolon
+Content: It has come to my attention that you recently used a semicolon… incorrectly. While we appreciate your bravery in attempting advanced punctuation, the semicolon is not a fancy comma nor a rebellious period. Should you require guidance, my door is open every Tuesday and occasionally when I’m not napping.
+
+From: luna.park@starlightmail.com
+Subject: Moonlight Delivery
+Content: I left something on your windowsill last night — don’t worry, it’s not cursed. Probably. It’s a tiny star I stole from the sky because I thought you needed a backup nightlight. Check it out before sunrise or it might try to float away again. If it does, chase it. Trust me.
+
+From: trevor.n@coolbeans.net
+Subject: Emergency Taste Test
+Content: Listen, we accidentally invented a new drink when strawberry syrup spilled into the espresso machine again. The baristas called it “tragic,” but one customer said “huh,” so I think we’re onto something. Come by the shop and bring your most open-minded taste buds.
+
+From: dr.byte@techlab.ai
+Subject: Toaster Status Update
+Content: We’ve confirmed your toaster now communicates in Morse code… through burnt patterns. It spelled out “I desire bagels” this morning. Please avoid offering waffles — it has strong opinions. We’ll send a linguist.
+
+From: ava.sketch@doodlehub.io
+Subject: New Art Challenge
+Content: Plot twist: your cat is now a pirate captain, sailing a giant tuna across the Milky Sea. Meanwhile, your dog? Still becoming an epic dragon, but now guarding a hoard of tennis balls. I need references of their most dramatic poses asap.
+
+From: gary.the.gnome@gardenwatch.org
+Subject: Further Violations Documented
+Content: The basil still mourns. The hydrangeas report continued off-key whistling. And someone performed suspicious midnight salsa dancing near the compost bin. This is your final warning before we deploy the Flamingo Battalion.
+
+From: captain.orion@interstellarfleet.gov
+Subject: Missing Spaceship Keys
+Content: The fleet can’t take off because someone misplaced the keys to Shuttle Bay 4 again. Last time we found them in a jar of pickles. If you have any information, please report immediately. Also, if you see a pickle jar floating in space… grab it.
+
+From: marie.monday@productivityplus.co
+Subject: Positive Reinforcement Reminder
+Content: According to our records, you only smiled 2.3 times yesterday. Our recommended minimum is five. Please practice in the mirror while saying: “Mondays are my destiny.” If your face cramps, that means it’s working.
+
+From: noodles.all.day@ramenmail.jp
+Subject: Broth Security Breach
+Content: Someone slurped too loudly during last night’s secret meeting, alerting enemy noodle spies. We must relocate operations to the abandoned karaoke room. Bring silence and maybe seaweed.
+
+From: olive.branch@neighborlypeace.org
+Subject: Yard Ornament Treaty
+Content: We noticed the new gargoyle statue staring directly into our living room. While we respect artistic expression, can it stare at something else? Preferably the sky. Or the unsuspecting mailman.
+
+From: professor.quibble@wordwizard.academy
+Subject: Comma Catastrophe
+Content: Your latest message contained a comma splice so dramatic it brought our grammarians to tears. Please enroll in remedial punctuation therapy. Sessions include deep breathing, sentence diagramming, and snack breaks (with properly punctuated labels).

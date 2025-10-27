@@ -1,46 +1,210 @@
 import re
 
-#Project Title
+
+# Function Definitions
+def line_counter(file_handle):
+    count = 0
+    for line in file_handle:
+        line = line.strip()
+        count += 1
+    file_handle.seek(0)
+    return count
+
+
+def char_counter(file_handle):
+    chars = file_handle.read()
+    count = len(chars)
+    file_handle.seek(0)
+    return count
+
+
+# Project Title
 print("\nProject Title: Text File Data Finder")
 
-def lineCounter (fileHandle):
-    fileHandle.seek(0)
-    lineCount = 0
-    for _ in fileHandle:
-        lineCount += 1
-    return lineCount
 
-def charCounter(fileHandle):
-    fileHandle.seek(0)
-    chars = fileHandle.read()
-    _ = len(chars)
-    return _
-
-#User-Program Interaction
+# User Input for File Name/Directory
 fName = input('\nType the file name or its directory to access the file\n> ')
 
+# File Handling
 try:
-    fHand = open(fName)
-except:
+    fHand = open(fName, 'r', encoding='utf-8')
+except (FileNotFoundError, IOError):
     print('\nUnable to access the file ', fName)
     quit()
 
-print('\nFile Information\n----------------', '\nLine Count: ', lineCounter(fHand), '\nCharacter Count: ', charCounter(fHand))
-    
-actions = input('\nInput the data content you want to display (Sender, Subject, Content)\n> ')
-actions = actions.lower()
-actionArr = actions.split()
-actionArrClean = []
+# Display File Information
+print(f"\nFile Information\n----------------\nLine Count: {line_counter(fHand)}\nCharacter Count: {char_counter(fHand)}")
 
-for word in actionArr:
-    cleanWord = str('')
-    for letter in word:
-        if letter.isalpha():
-            cleanWord += letter
-    actionArrClean.append(cleanWord)
+# User Action Loop
+while True:
+    toDo = input("\nActions\n--------\n1. Display all\n2. Retrieve Specific\n3. Exit\n\n>")
+
+    # Display All Data
+    if toDo == '1':
+        actions = ['sender', 'subject', 'content']
+        for line in fHand:
+            for action in actions:
+                if (action == 'sender' and re.search('^From:', line)) or (action == 'subject' and re.search('^Subject:', line)) or (action == 'content' and re.search('^Content:', line)):
+                    print(line)
+        fHand.seek(0)
+        actions.clear()
     
-for line in fHand:
-    line = line.rstrip()
-    for action in actionArrClean:
-        if action == 'sender' and re.search('^From:', line) or action == 'subject' and re.search('^Subject:', line) or action == 'content' and re.search('^Content:', line):
-            print(line)
+    # Retrieve Specific Info
+    elif toDo == '2':
+        user_choice_level1 = input('\nRetrieve information By\n1. Sender\n2. Subject\n3. Content\n> ')
+
+        if user_choice_level1 == '1':
+            specific_sender = input('\nWrite a segment of an email you want to find a match for\n> ')
+
+            # Handle empty input
+            if specific_sender.strip() == '':
+                print('\nNo sender provided. Returning to main menu.\n')
+                continue
+            
+            # Steps to be performed:
+            # 1. Finds the similar sender line and keeps track whether if single or if multiple matches found
+            # 2. Print the sender line
+            # 3. Print the subject line, after the sender line
+            # 4. Print the content line, after the subject line
+            # 5. If no match found, print appropriate message
+            
+            count = 0
+            # Regex pattern to match the specific sender, case insensitive
+            # First pass to count matches
+            pattern = re.compile(rf'^From:.*{re.escape(specific_sender)}', re.IGNORECASE)
+            for line in fHand:
+                line = line.strip()
+                if pattern.search(line):
+                    count += 1
+            fHand.seek(0)
+            
+            # Display count message
+            if count > 1:
+                print('\nMultiple matching data found.\n--------------------------------')
+            elif count == 1:
+                print('\nSingle matching data found.\n--------------------------------')
+            elif count == 0:
+                print('\nNo matching data found.\n')
+            
+            # Second pass to display matches
+            for line in fHand:
+                line = line.strip()
+                if pattern.search(line):
+                    print(f"\n{line}")
+                    subject_line = next(fHand, '').strip()
+                    if subject_line.startswith('Subject:'):
+                        print(f"\n{subject_line}")
+                    content_line = next(fHand, '').strip()
+                    if content_line.startswith('Content:'):
+                        print(f"\n{content_line}")
+                    print('\n--------------------------------')
+            fHand.seek(0)
+            
+        elif user_choice_level1 == '2':
+            specific_subject = input('\nWrite a segment of a subject you want to find a match for\n> ')
+            
+            # Handle empty input
+            if specific_subject.strip() == '':
+                print('\nNo subject provided. Returning to main menu.\n')
+                continue
+            
+            # Steps to be performed:
+            # 1. Finds the similar subject line and keeps track whether if single or if multiple matches found
+            # 2. Print the sender line, before the subject line
+            # 3. Print the subject line
+            # 4. Print the content line, after the subject line
+            # 5. If no match found, print appropriate message
+            
+            count = 0
+            # Regex pattern to match the specific subject, case insensitive
+            # First pass to count matches
+            pattern = re.compile(rf'^Subject:.*{re.escape(specific_subject)}', re.IGNORECASE)
+            for line in fHand:
+                line = line.strip()
+                if pattern.search(line):
+                    count += 1
+            fHand.seek(0)
+            
+            # Display count message
+            if count > 1:
+                print('\nMultiple matching data found.\n--------------------------------')
+            elif count == 1:
+                print('\nSingle matching data found.\n--------------------------------')
+            elif count == 0:
+                print('\nNo matching data found.\n')
+            
+            # Second pass to display matches
+            sender_line = ''
+            for line in fHand:
+                line = line.strip()
+                if line.startswith('From:'):
+                    sender_line = line
+                if pattern.search(line):
+                    if sender_line.startswith('From:'):
+                        print(f"\n{sender_line}")
+                    print(f"\n{line}")
+                    content_line = next(fHand, '').strip()
+                    if content_line.startswith('Content:'):
+                        print(f"\n{content_line}")
+                    print('\n--------------------------------')
+            fHand.seek(0)
+            
+        elif user_choice_level1 == '3':
+            specific_content = input('\nWrite a segment of content you want to find a match for\n> ')
+
+            # Handle empty input
+            if specific_content.strip() == '':
+                print('\nNo content provided. Returning to main menu.\n')
+                continue
+            
+            # Steps to be performed:
+            # 1. Finds the similar content line and keeps track whether if single or if multiple matches found
+            # 2. Print the sender line, before the subject line
+            # 3. Print the subject line, before the content line
+            # 4. Print the content line
+            # 5. If no match found, print appropriate message
+            
+            count = 0
+            # Regex pattern to match the specific content, case insensitive
+            # First pass to count matches
+            pattern = re.compile(rf'^Content:.*{re.escape(specific_content)}', re.IGNORECASE)
+            for line in fHand:
+                line = line.strip()
+                if pattern.search(line):
+                    count += 1
+            fHand.seek(0)
+            
+            # Display count message
+            if count > 1:
+                print('\nMultiple matching data found.\n--------------------------------')
+            elif count == 1:
+                print('\nSingle matching data found.\n--------------------------------')
+            elif count == 0:
+                print('\nNo matching data found.\n')
+            
+            # Second pass to display matches
+            sender_line = ''
+            subject_line = ''
+            for line in fHand:
+                line = line.strip()
+                if line.startswith('From:'):
+                    sender_line = line
+                if line.startswith('Subject:'):
+                    subject_line = line
+                    previous_subject = line
+                if pattern.search(line):
+                    if sender_line.startswith('From:'):
+                        print(f"\n{sender_line}")
+                    if subject_line.startswith('Subject:'):
+                        print(f"\n{subject_line}")
+                    print(f"\n{line}")
+                    print('\n--------------------------------')
+            fHand.seek(0)
+            
+    elif toDo == '3':
+        print('\nExiting Program...\n')
+        break
+    
+    # Invalid Option Handling
+    else:
+        print('\nInvalid Option. Please try again.\n')
