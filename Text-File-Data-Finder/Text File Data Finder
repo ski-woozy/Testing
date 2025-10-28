@@ -191,7 +191,6 @@ while True:
                     sender_line = line
                 if line.startswith('Subject:'):
                     subject_line = line
-                    previous_subject = line
                 if pattern.search(line):
                     if sender_line.startswith('From:'):
                         print(f"\n{sender_line}")

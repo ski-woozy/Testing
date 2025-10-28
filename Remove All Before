@@ -1,0 +1,27 @@
+def remove_all_before(items: list, border: int) -> list:
+    index_point = -1
+    for i in items:
+        if border == i:
+            index_point = items.index(i)
+    break_point = index_point - 1
+    while break_point > -1:
+        items.pop(break_point)
+        break_point -= 1
+    return items
+
+# Example usage:
+# print(remove_all_before([1, 2, 3, 4, 5], 3))  # Output: [3, 4, 5]
+# print(remove_all_before([1, 2, 3, 4, 5], 6))  # Output: [1, 2, 3, 4, 5]
+# Take note that if the border element is not found in the list, the original list is returned unchanged.
+
+# Input format:
+# A list of items (can be integers, strings, etc.) and a border element.
+# Example:
+# items = [1, 2, 3, 4, 5], 3
+# output = [3, 4, 5]
+
+user_input = input("\nEnter a list of items separated by spaces: ")
+items = user_input.split()
+border = input("\nEnter the border element: ")
+result = remove_all_before(items, border)
+print("\nResulting list:", result,'\n')
