@@ -1,0 +1,19 @@
+import urllib.request, urllib.parse, urllib.error
+from html.parser import HTMLParser  
+
+
+def web_handle(fill):
+    webHand = urllib.request.urlopen(f"{fill}")
+    for line in webHand:
+        print(line.decode().strip())
+    return webHand
+
+while True:
+    url = input("\nEnter URL: ")
+    if url == '' or not url.startswith('http'):
+        print("Invalid URL. Please enter a valid URL starting with 'http' or 'https'.\n")
+        continue
+    else:
+        break
+
+web_content = web_handle(url)
