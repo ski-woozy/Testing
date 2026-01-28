@@ -4,11 +4,12 @@ def assort(digits: list) -> tuple:
     else:
         digits.sort()
         return tuple(digits)
+    
 
-# These "asserts" are used for self-checking
 userIn = input("Enter digits separated by spaces: ").strip()
 try:
     digits = list(map(int, userIn.split()))
+    print(digits)
     print(assort(digits))
 except ValueError:
     print("invalid input")
