@@ -1,16 +1,15 @@
-def listUnique():
-    def unique_in_order(sequence):
-        unique = []
-        current = None
-        for char in sequence:
-            if current is None or current != char:
-                current = char
-                unique.append(current)
-        return unique
 
-    print("how to use: enter a sequence of characters and the program will return a list of those characters without any elements with the same value next to each other.")
-    userIn = input("Enter a sequence: ").strip()
-    print(unique_in_order(userIn))
+def unique_in_order(sequence):
+    unique = []
+    current = None
+    for char in sequence:
+        if current is None or current != char:
+            current = char
+            unique.append(current)
+    return unique
 
-return listUnique()
+print("how to use: enter a sequence of characters and the program will return a list of those characters without any elements with the same value next to each other.")
+userIn = input("Enter a sequence: ").strip()
+print(unique_in_order(userIn))
+
 
